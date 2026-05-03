@@ -43,8 +43,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 28px;
-  background: rgba(30, 5, 5, 0.9);
-  position: relative;
+  background: #2a0505;
 }
 
   .nav-logo {
@@ -111,6 +110,31 @@
     padding: 90px 44px 60px;
     position: relative;
   }
+  /* about section */
+  .about-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 40px 18px #2D0A3D, 0 0 80px 30px rgba(45, 10, 61, 0.3);
+  margin-right: -250px;
+  align-self: center;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-right: 0;
+
+}
+
+.about-left {
+  flex: 1;
+}
 
   /* character image */
   .character {
@@ -124,7 +148,10 @@
     object-position: top right;
     z-index: 50;
     pointer-events: none;
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
+    filter: grayscale(100%) contrast(1.2);
+    mix-blend-mode: lighten;
+    opacity: 1;
   }
 
   /* main card */
@@ -291,10 +318,13 @@
 
     <!-- about -->
     <div class="about">
-      <h1>About the artist:</h1>
-      <p>Alfred is a Kerala-based graphic designer with several years of experience in visual storytelling. His work spans graphic design, video editing, and photo editing — blending technical precision with a distinct artistic vision</p>
-      <span class="more-desc">more desc</span>
-    </div>
+  <div class="about-left">
+    <h1>About the artist:</h1>
+    <p>Alfred is a Kerala-based graphic designer with several years of experience in visual storytelling. His work spans graphic design, video editing, and photo editing — blending technical precision with a distinct artistic vision</p>
+    <span class="more-desc">more desc</span>
+  </div>
+  <img class="about-photo" src="230.jpg" alt="Alfred">
+</div>s
 
     <!-- my artwork banner -->
     <div class="artwork-banner">
