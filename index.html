@@ -14,70 +14,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }<script>
+const stars = '✦✶✺⋆';
+document.addEventListener('mousemove', e => {
+  const el = document.createElement('span');
+  el.textContent = stars[Math.floor(Math.random() * stars.length)];
+  el.style.cssText = `
+    position: fixed;
+    left: ${e.clientX - 8}px;
+    top: ${e.clientY - 8}px;
+    font-size: ${10 + Math.random() * 14}px;
+    color: hsl(${340 + Math.random() * 40}, 60%, 75%);
+    pointer-events: none;
+    z-index: 99999;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+  `;
+  document.body.appendChild(el);
+  requestAnimationFrame(() => {
+    el.style.opacity = '0';
+    el.style.transform = `translate(${(Math.random()-0.5)*30}px, -20px) scale(0.4)`;
+  });
+  setTimeout(() => el.remove(), 700);
+});
+</script>
+  @keyframes starSpin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.3); }
+    100% { transform: rotate(360deg) scale(1); }
   }
-    /* cursors*/
-  * {
-    cursor: url('Star_Normal.cur'), auto;
-  }
- 
-  a, button, [role="link"] {
-    cursor: url('Star_Link.cur'), pointer;
-  }
- 
-  input, textarea, [contenteditable] {
-    cursor: url('Star_Text.cur'), text;
-  }
- 
-  [disabled], .unavailable {
-    cursor: url('Star_Unavailable.cur'), not-allowed;
-  }
- 
-  .move {
-    cursor: url('Star_Move.cur'), move;
-  }
- 
-  .resize-diagonal-1 {
-    cursor: url('Star_Diagonal_1.cur'), nwse-resize;
-  }
- 
-  .resize-diagonal-2 {
-    cursor: url('Star_Diagonal_2.cur'), nesw-resize;
-  }
- 
-  .resize-horizontal {
-    cursor: url('Star_Horizontal.cur'), ew-resize;
-  }
- 
-  .resize-vertical {
-    cursor: url('Star_Verticle.cur'), ns-resize;
-  }
- 
-  .help {
-    cursor: url('Star_Help.cur'), help;
-  }
- 
-  .handwriting {
-    cursor: url('Star_Handwriting.cur'), crosshair;
-  }
- 
-  .loading {
-    cursor: url('Star_Busy.ani'), wait;
-  }
- 
-  .background-busy {
-    cursor: url('Star_Background.ani'), progress;
-  }
- 
-  .alternate {
-    cursor: url('Star_Alternative.cur'), alias;
-  }
- 
-
   :root {
     --bg: #3d0808;
     --card-bg: #ede0e0;
     --maroon: #5a0d0d;
-    --navy: #2D0A3D;
+    --navy: #3d1a2e;
     --text-dark: #1a1a1a;
     --text-mid: #333;
   }
@@ -359,18 +329,18 @@
   }
   @media (max-width: 768px) {
   .character { display: none; }
-  nav { padding: 14px 16px; flex-wrap: wrap; gap: 8px; }
-  .nav-center { position: static; transform: none; font-size: 1.3rem; order: 1; width: 100%; justify-content: center; }
-  .nav-links { order: 0; gap: 8px; }
-  .nav-links a { padding: 7px 14px; font-size: 0.7rem; }
+  nav { padding: 14px 16px; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .nav-center { position: static; transform: none; font-size: 1.2rem; order: 0; width: 100%; justify-content: center; }
+  .nav-links { order: 1; gap: 6px; justify-content: center; flex-wrap: wrap; width: 100%; }
+  .nav-links a { padding: 6px 12px; font-size: 0.68rem; }
   .page { padding: 80px 12px 40px; }
   .about { flex-direction: column; max-width: 100%; padding: 28px 20px 24px; gap: 20px; }
   .about-photo { float: right; margin: 0 0 12px 16px; width: 130px; height: 130px; }
   .about-left { width: 100%; }
   .about h1 { font-size: 1.5rem; }
   .artwork-section { flex-direction: column; padding: 24px 20px 32px; gap: 20px; }
-  .artwork-img { width: 100%; height: 300px; }
-  .artwork-text { width: 100%; max-width: 100%; }
+  .artwork-img { width: 100%;max-width: 100%; height: 260px;object-fit: cover; }
+  .artwork-text { width: 100%; max-width: 100%;word-break: break-word; overflow-wrap: break-word; }
   .artwork-title { font-size: 2rem; margin-right: 0; }
   .artwork-banner { height: 80px; }
   .artwork-banner span { font-size: 2rem; }
@@ -396,7 +366,8 @@
   <div class="nav-links">
     <a href="https://www.instagram.com/vy0013vy/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.behance.net/vyvy0013" target="_blank" rel="noopener">Behance</a>
-    <a href="https://open.spotify.com/user/2j7gt0slnkk50y34xfbkavn76?si=79164cddd8754813" target="_blank" rel="noopener">Spotify</a>
+    <!-- <a href="https://open.spotify.com/user/2j7gt0slnkk50y34xfbkavn76?si=79164cddd8754813" target="_blank" rel="noopener">Spotify</a> -->
+    <a href="updates.html">Updates</a>
   </div>
 </nav>
 
@@ -479,8 +450,7 @@
         <span class="artwork-comment"> : faith worn like a wound</span>
       </div>
   </div>
-  
-<img class="logo" margin-bottom="50px" src="logo_shadow.png" alt="logo">
+
 </div>
 </body>
 </html>
