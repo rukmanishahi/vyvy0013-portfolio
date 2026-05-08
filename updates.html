@@ -15,27 +15,15 @@
     box-sizing: border-box;
   }
 
-  * {
-    cursor: url('Star_Normal.cur'), auto;
+  /* scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
   }
-
-  a, button, [role="link"] {
-    cursor: url('Star_Link.cur'), pointer;
-  }
-
-  body {
-    cursor: none;
-  }
-
-  #star-cursor {
-    width: 20px;
-    height: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999;
-    animation: starSpin 1s linear infinite;
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @keyframes starSpin {
@@ -52,7 +40,15 @@
     --text-dark: #1a1a1a;
     --text-mid: #333;
   }
-
+  .logo {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    margin-bottom: -100px;
+  }
   body {
     background-color: var(--bg);
     font-family: 'Lato', sans-serif;
@@ -203,17 +199,6 @@
     max-width: 640px;
   }
 
-  /* logo */
-  .logo {
-    position: fixed;
-    bottom: 50px;
-    left: 20px;
-    width: 150px;
-    height: 150px;
-    z-index: 9999;
-    margin-bottom: -100px;
-  }
-
   /* mobile */
   @media (max-width: 768px) {
     nav { padding: 14px 16px; flex-wrap: wrap; gap: 6px; justify-content: center; }
@@ -246,10 +231,8 @@
   </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="https://www.instagram.com/vy0013vy/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.behance.net/vyvy0013" target="_blank" rel="noopener">Behance</a>
-    <!-- <a href="https://open.spotify.com/user/2j7gt0slnkk50y34xfbkavn76?si=79164cddd8754813" target="_blank" rel="noopener">Spotify</a> -->
     <a href="updates.html" class="active">Updates</a>
+    <a href="links.html">Links</a>
   </div>
 </nav>
 
@@ -263,22 +246,31 @@
 
     <div class="updates-feed">
 
+      <p class="updates-intro reveal">
+        A process journal !.✦ ݁˖ thoughts on works in progress, behind-the-scenes notes, and whatever is moving through the studio right now. Newest first.
+      </p>
+
       <!-- ————————————————————————————————————————
-           hiii alpi :3 this is how to add a post!!
-           Copy one <div class="update-post"> block,
-           paste it above this comment,
-           change the date and text. newest post goes on top.
+           hiii alphyyy!!! to add a new post, copy one update-post block,
+           paste it right below this comment (above the others),
+           change the date, tag, and text.
+           newest post goes on top.
       ————————————————————————————————————————— -->
 
-      <div class="update-post">
+      <div class="update-post reveal">
         <span class="update-date">May 9, 2026</span>
-        <p class="update-body">hiiii still working on the website :p
+        <span class="update-tag">ִ ࣪ ˖ ࣪ ᨰꫀᥣᥴ᥆ꩇꫀ ! ᰔ ִ ׄ</span>
+        <p class="update-body">◝(ᵔᗜᵔ)◜ just got this updates page up today
         </p>
-        <p>i just made this updates page today</p>
-      <p>-rukmani</p>
-    </div>
+        <span class="update-sig"> -Rukmani</span>
+      </div>
 
     </div>
+    
+  
+<img class="logo" src="logo_shadow.png" alt="logo">
+  </div>
+</div>
 
   </div>
 </div>
@@ -286,11 +278,17 @@
 <img class="logo" src="logo_shadow.png" alt="logo">
 
 <script>
-  const cursor = document.getElementById('star-cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX - 10 + 'px';
-    cursor.style.top  = e.clientY - 10 + 'px';
-  });
+  /* scroll reveal */
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
 </script>
 
 </body>

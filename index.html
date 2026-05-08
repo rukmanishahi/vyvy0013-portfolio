@@ -344,10 +344,31 @@ document.addEventListener('mousemove', e => {
   .artwork-title { font-size: 2rem; margin-right: 0; }
   .artwork-banner { height: 80px; }
   .artwork-banner span { font-size: 2rem; }
-}
+  .contact-section { padding: 32px 20px 40px; }
+  .contact-section h2 { font-size: 1.8rem; }
+  .artists-grid {grid-template-columns: 1fr; gap: 14px;}
+  .artist-card {width: 100%;padding: 16px;}
+  artist-avatar {
+    width: 58px;
+    height: 58px;
+  }
+  .artist-name {
+    font-size: 0.95rem;
+  }
+  .artist-handle {
+    font-size: 0.9rem;
+  }
+  .artists-section h2 {
+    font-size: 2rem;
+  }
+  }
 </style>
 </head>
 <body>
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <!-- navbar -->
 
@@ -378,15 +399,20 @@ document.addEventListener('mousemove', e => {
   <div class="card">
 
     <!-- about -->
-    <div class="about">
-  <div class="about-left">
-    <h1>About the artist:</h1>
-    <p>desc</p>
-    <span class="more-desc">Email: justalfredtennyson@gmail.com ⋆</span>
-    <a class="more-desc" href="https://www.instagram.com/humanityb4eggsnchicks/" target="_blank" rel="noopener noreferrer">⟡ @humanityb4eggsnchicks</a>
-  </div>
-  <img class="about-photo" src="230.jpg" alt="Alfred">
-</div>
+    <div class="about reveal">
+      <div class="about-left">
+        <h1>About the artist:</h1>
+        <p>
+          Alfred is a graphic designer and visual artist working in dark surrealism, building worlds from photographs, shadows, and things that sit just outside of logic. With over a year of practice in Adobe Photoshop, his work spans photo manipulation, poster design, and editorial image-making. He has also worked in motion, editing for a YouTube creator. Every piece begins with a feeling that doesn't have a name yet.</p>
+        <p style="margin-top:10px;">
+          Based in Kerela, India. Open to commissions, editorial collaborations, and exhibition inquiries.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">Dark Surrealism</span>
+        </div>
+      </div>
+      <img class="about-photo" src="230.jpg" alt="Alfred">
+    </div>
 
     <!-- my artwork banner -->
     <div class="artwork-banner">
@@ -396,13 +422,19 @@ document.addEventListener('mousemove', e => {
 
     <!-- porcelain piece -->
     <div class="artwork-section">
-      <img class="artwork-img" src="porcelain.jpeg" alt="Porcelain">
+      <img class="artwork-img" src="porcelain.jpeg" alt="Porcelain" data-lightbox>
       <div class="artwork-text">
         <div class="artwork-title">PORCELAIN</div>
+        <span class="artwork-meta"> Photo Manipulation · 2026</span>
         <span class="artists-note-label">artist's note.</span>
         <p class="artwork-body">Porcelain does not bruise. It does not bend or bleed. It simply holds its shape until, one day, without warning, it doesn't. This is a portrait of that moment not the breaking, but the long stillness before it. The grief that accumulates like pattern on a wall. The darkness that arrives so gradually you mistake it for the room itself. This is a portrait of that moment before the crack not the breaking, but the long and wordless season that precedes it. The grief that settles into a body the way pattern settles into wallpaper, so slowly, so completely, that you forget there was ever a wall beneath. The darkness that moves in without announcement and rearranges everything until you can no longer tell what is shadow and what is simply you.</p>
         <img src="blwpor.png" width="200px" margin-right="100px" alt="Rip Me Apart Thumbnail">
         <span class="artwork-comment">:That is what porcelain does, it keeps the secret perfectly, right until the end.</span>
+        <br>
+        <a class="artwork-link" href="https://www.behance.net/gallery/247369017/PORCELAIN" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 7h-7V5h7zm1 4H14V9h9zm-7 4h7v-2h-7zM2 8h4a3 3 0 0 1 0 6H2zm0 0v10"/></svg>
+          View full project on Behance
+        </a>
       </div>
     </div>
     <!-- rip me apart-->
@@ -410,47 +442,138 @@ document.addEventListener('mousemove', e => {
       <img class="artwork-img" src="ripmeapart.png" alt="Rip Me Apart">
       <div class="artwork-text">
         <div class="artwork-title">RIP ME APART</div>
+        <span class="artwork-meta">Digital Colour-grading & Photo Manipulation· 2026</span>
         <span class="artists-note-label">artist's note.</span>
         <p class="artwork-body">"Rip Me Apart" is a clay sculpture exploring the idea of emotional vulnerability and exposure. The piece depicts hands tearing open a torso to reveal the spine beneath using the body as a metaphor for being completely laid bare by another person. The work went through several stages, from raw clay to digitally color-graded finishes, each version bringing a different mood to the same form. To be truly known is to be taken apart. This is what that looks like. The central question the piece asks is simple</p>
-        <img src="ripmeapartblw.png" width="200px" margin-right="100px" alt="Rip Me Apart Thumbnail">
-        <span class="artwork-comment"> :is being truly seen by someone an act of love, or does it always cost you something?</span>
+        <img src="ripmeapartblw.png" width="200px" alt="Rip Me Apart BW">
+        <span class="artwork-comment">:is being truly seen by someone an act of love, or does it always cost you something?</span>
+        <br>
+        <a class="artwork-link" href="https://www.behance.net/gallery/247161125/RIP-ME-APART" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 7h-7V5h7zm1 4H14V9h9zm-7 4h7v-2h-7zM2 8h4a3 3 0 0 1 0 6H2zm0 0v10"/></svg>
+          View full project on Behance
+        </a>
       </div>
-  </div>
+    </div>
   <!-- poison -->
-  <div class="artwork-section">
-      <img class="artwork-img" src="poison.png" alt="Poison">
+<div class="artwork-section reveal">
+      <img class="artwork-img" src="poison.png" alt="Poison" data-lightbox>
       <div class="artwork-text">
         <div class="artwork-title">POISON</div>
+        <span class="artwork-meta">Photo Manipulation · 2026</span>
         <span class="artists-note-label">artist's note.</span>
         <p class="artwork-body">Some things are beautiful because they will kill you. The figure doesn't flinch. She holds the dead wood like a spine, like a secret, while the orchids press themselves into the wall behind her ghost-printed, half-remembered, the kind of flowers you find in old letters you shouldn't have kept. The butterfly lands anyway. It always does. Drawn to what it cannot survive. Color is the only honest thing here. Ember for the moment before you know. Crimson for want. Ash for what remains when the wanting is done. Blue for the cold that comes after.</p>
-        <img src="blwpois.png" width="200px" margin-right="100px" alt="Poison Thumbnail">
-        <span class="artwork-comment"> :Poison never tastes like poison. That's the whole point.</span>
+        <img src="blwpois.png" width="200px" alt="Poison BW">
+        <span class="artwork-comment">:Poison never tastes like poison. That's the whole point.</span>
+        <br>
+        <a class="artwork-link" href="https://www.behance.net/gallery/246914311/POISON" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 7h-7V5h7zm1 4H14V9h9zm-7 4h7v-2h-7zM2 8h4a3 3 0 0 1 0 6H2zm0 0v10"/></svg>
+          View full project on Behance
+        </a>
       </div>
     </div>
   <!-- hold me down -->
-  <div class="artwork-section">
-      <img  src="holdmedown.png" width="600px" alt="Hold Me Down">
+  <div class="artwork-section reveal">
+      <img class="artwork-img" src="holdmedown.png" alt="Hold Me Down" data-lightbox>
       <div class="artwork-text">
         <div class="artwork-title">HOLD ME DOWN</div>
+        <span class="artwork-meta">Photo Manipulation · Colour Grading 2026</span>
         <span class="artists-note-label">artist's note.</span>
         <p class="artwork-body">There is a body that refuses to disappear. Hands raised not in surrender, but in testament. The water does not swallow, it bears witness. Draped and faceless, the figure exists somewhere between drowning and devotion. Between a baptism no one asked for and one that cannot be undone. It folds, it reaches, it surrenders halfway. Hands open, not grasping, just offering. The moment devotion becomes weight, when being held and being held down stop feeling different.</p>
-        <p>Lace for the vow. Shadow for the doubt. Crimson for what it costs</p>
-        <img src="blwholdme.png" width="200px" margin-right="100px" alt="Hold Me Down blw">
-        <span class="artwork-comment"> :The water isn't the enemy. That's the hardest part.</span>
+        <p style="font-size:0.95rem;color:#4a2a2a;margin-bottom:12px;">Lace for the vow. Shadow for the doubt. Crimson for what it costs.</p>
+        <img src="blwholdme.png" width="200px" alt="Hold Me Down BW">
+        <span class="artwork-comment">:The water isn't the enemy. That's the hardest part.</span>
+        <br>
+        <a class="artwork-link" href="https://www.behance.net/gallery/246842199/HOLD-ME-DOWN" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 7h-7V5h7zm1 4H14V9h9zm-7 4h7v-2h-7zM2 8h4a3 3 0 0 1 0 6H2zm0 0v10"/></svg>
+          View full project on Behance
+        </a>
       </div>
     </div>
+
     <!-- in nominee -->
-    <div class="artwork-section">
-      <img  src="innominee.png" width="600px" alt="In Nominee">
+    <div class="artwork-section reveal">
+      <img class="artwork-img" src="innominee.png" alt="In Nominee" data-lightbox>
       <div class="artwork-text">
         <div class="artwork-title">IN NOMINEE</div>
+        <span class="artwork-meta">Photo Manipulation · 2026</span>
         <span class="artists-note-label">artist's note.</span>
         <p class="artwork-body">The central focus of this piece is the hands rendered in a deep, almost arterial crimson, they become something both sacred and sinister. Pressed together in a gesture of prayer, they betray their devotion through their color. The figure wears the habit of a nun, yet these hands suggest she carries something darker beneath her piety. The contrast between the white of the veil and the red of the hands is intentional, purity and corruption existing in the same body, the same prayer, the same soul. The edit deepens this tension. By intensifying the grain and the richness of the red tones, the hands seem to bleed into the frame itself, no longer just a detail but the entire soul of the image. "They silence her, or perhaps she silences herself. covering her mouth as though holding back something she was never meant to say"</p>
-        <img src="innomineeee.png" width="200px" margin-right="100px" alt="In Nominee blw">
-        <span class="artwork-comment"> : faith worn like a wound</span>
+        <img src="innomineeee.png" width="200px" alt="In Nominee BW">
+        <span class="artwork-comment">:faith worn like a wound</span>
+        <br>
+        <a class="artwork-link" href="https://www.behance.net/gallery/246189155/In-NOMINE" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 7h-7V5h7zm1 4H14V9h9zm-7 4h7v-2h-7zM2 8h4a3 3 0 0 1 0 6H2zm0 0v10"/></svg>
+          View full project on Behance
+        </a>
       </div>
-  </div>
+    </div>
+    <!-- fav artists -->
+     <!-- ---- favourite artists ---- -->
+<div class="artists-section reveal">
+  <h2>Artists I love</h2>
+  <p class="artists-sub">some of the people whose work lives in my head rent-free.</p>
+  <div class="artists-grid">
 
+    <a class="artist-card" href="https://www.instagram.com/takatoy999/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="2.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Takato Yamamoto</span>
+        <span class="artist-handle">@takatoy999</span>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://www.instagram.com/thoresfan/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="1.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Thores Shibamoto</span>
+        <span class="artist-handle">@thoresfan</span>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://www.instagram.com/17lujtkmt/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="6.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Lulu</span>
+        <span class="artist-handle">@17lujtkmt</span>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://www.instagram.com/oonaode/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="5.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Oona Ode</span>
+        <span class="artist-handle">@oonaode</span>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://www.instagram.com/cold.eternal/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="7.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Meriam Awada</span>
+        <span class="artist-handle">@cold.eternal</span>
+      </div>
+    </a>
+
+    <a class="artist-card" href="https://www.instagram.com/faedriel/" target="_blank" rel="noopener">
+      <img class="artist-avatar" src="4.jpg" alt="Takato Yamamoto">
+      <div class="artist-info">
+        <span class="artist-name">Faedriel</span>
+        <span class="artist-handle">@faedriel</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+<div class="contact-section reveal">
+      <h2>Work together ⋆</h2>
+      <p class="contact-sub">
+        Open to editorial commissions, exhibition features, collaborative projects, and licensing inquiries. (Instagram Preferred)</p>
+      <div class="contact-buttons">
+        <a class="contact-btn secondary" href="https://www.instagram.com/vy0013vy/" target="_blank" rel="noopener">Instagram</a>
+        <a class="contact-btn secondary" href="https://www.behance.net/vyvy0013" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </div>
+<img class="logo" src="logo_shadow.png" alt="logo">
 </div>
 </body>
 </html>
