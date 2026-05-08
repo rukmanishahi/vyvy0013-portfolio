@@ -259,6 +259,35 @@ document.addEventListener('mousemove', e => {
     gap: 44px;
     align-items: flex-start;
   }
+/* behance link per piece */
+  .artwork-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #b09090;
+    border-radius: 999px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .artwork-link:hover {
+    background: var(--maroon);
+    color: #f5eded;
+    border-color: var(--maroon);
+  }
+  .artwork-link svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
 
   .artwork-img {
     width: 600px;
@@ -327,6 +356,129 @@ document.addEventListener('mousemove', e => {
     font-weight: 500;
     display: block;
   }
+   /* ---- favourite artists section ---- */
+.artists-section {
+  border-top: 1px solid #c9b4b4;
+  padding: 48px 48px 52px;
+}
+.artists-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--maroon);
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+.artists-sub {
+  font-size: 0.88rem;
+  color: #5a3a3a;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.artist-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #e4d4d4;
+  border: 1px solid #c9a0a0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.artist-card:hover {
+  background: #d9c4c4;
+  transform: translateY(-2px);
+}
+.artist-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.1);
+  
+}
+.artist-info { overflow: hidden; }
+.artist-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.artist-handle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: #7a4a4a;
+  font-style: italic;
+  display: block;
+}
+/* ---- contact section ---- */
+  .contact-section {
+    border-top: 1px solid #c9b4b4;
+    padding: 48px 48px 52px;
+  }
+  .contact-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--maroon);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .contact-sub {
+    font-size: 0.9rem;
+    color: #5a3a3a;
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 28px;
+  }
+  .contact-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .contact-btn:hover { opacity: 0.82; transform: translateY(-1px); }
+  .contact-btn.primary {
+    background: var(--maroon);
+    color: #f5eded;
+  }
+  .contact-btn.secondary {
+    background: transparent;
+    border: 1px solid #b09090;
+    color: var(--maroon);
+  }
+
+@media (max-width: 768px) {
+  .artists-section { padding: 32px 20px 40px; }
+  .artists-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .artists-section h2 { font-size: 1.8rem; }
+}
   @media (max-width: 768px) {
   .character { display: none; }
   nav { padding: 14px 16px; flex-wrap: wrap; gap: 6px; justify-content: center; }

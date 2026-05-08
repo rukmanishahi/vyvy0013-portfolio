@@ -14,7 +14,15 @@
     padding: 0;
     box-sizing: border-box;
   }
-
+    .logo {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    margin-bottom: -100px;
+  }
   .reveal {
     opacity: 0;
     transform: translateY(22px);
@@ -155,7 +163,7 @@
   .links-intro {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1.5rem;
     color: #7a4a4a;
     line-height: 1.8;
     margin-bottom: 40px;
@@ -219,7 +227,38 @@
     color: #b09090;
     flex-shrink: 0;
   }
+  /* ascii decoration */
 
+.ascii-decor {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  margin-top: 30px;
+}
+
+.ascii-left,
+.ascii-right {
+  position: absolute;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  font-size: 18px;
+
+  color: #f4ece6; /* cream white */
+
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.ascii-left {
+  left: 0;
+  bottom: 0;
+}
+
+.ascii-right {
+  right: 10px;
+  bottom: 10px;
+}
   @media (max-width: 768px) {
     nav { padding: 14px 16px; flex-wrap: wrap; gap: 6px; justify-content: center; }
     .nav-center { position: static; transform: none; font-size: 1.2rem; order: 0; width: 100%; justify-content: center; }
@@ -266,27 +305,39 @@
       <p class="links-intro reveal">
         everywhere you can find alfred's work! or just say hi 𐦂𖨆𐀪𖠋.
       </p>
-      <a class="link-item reveal" href="https://www.instagram.com/vy0013vy/" target="_blank" rel="noopener">
-        <div class="link-icon instagram">
-          <!-- Instagram icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="#f5eded" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+
+        <a class="link-item reveal" href="https://www.instagram.com/vy0013vy/" target="_blank" rel="noopener">
+          <div class="link-icon instagram">
+            <!-- Instagram icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f5eded" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="0.8" fill="#f5eded" stroke="none"/>
             </svg>
           </div>
-        <div class="link-text">
-          <span class="link-name">Instagram</span>
-          <span class="link-handle">@vy0013vy</span>
-        </div>
-        <span class="link-arrow">↗</span>
-      </a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="#f5eded" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          
+          <div class="link-text">
+            <span class="link-name">Instagram</span>
+            <span class="link-handle">@vy0013vy</span>
+          </div>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link-item reveal" href="https://www.instagram.com/humanityb4eggsnchicks/" target="_blank" rel="noopener">
+        <div class="link-icon instagram">
+          <!-- Instagram icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f5eded" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
             <circle cx="17.5" cy="6.5" r="0.8" fill="#f5eded" stroke="none"/>
           </svg>
         </div>
+        
+        <div class="link-text">
+          <span class="link-name">Instagram</span>
+          <span class="link-handle">@humanityb4eggschicks</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
       <a class="link-item reveal" href="https://www.behance.net/vyvy0013" target="_blank" rel="noopener">
         <div class="link-icon behance">
           <!-- Behance icon -->
@@ -319,7 +370,8 @@
         </div>
         <span class="link-arrow">↗</span>
       </a>
-</div>
+
+    </div>
     <img class="logo" src="logo_shadow.png" alt="logo">
   </div>
 </div>
