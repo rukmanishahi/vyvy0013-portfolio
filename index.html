@@ -479,6 +479,27 @@ document.addEventListener('mousemove', e => {
   .artists-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .artists-section h2 { font-size: 1.8rem; }
 }
+  /* Tablet fix */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .artwork-section {
+    flex-direction: column;
+    padding: 28px 32px 36px;
+    gap: 24px;
+  }
+  .artwork-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+  .artwork-text {
+    width: 100%;
+    max-width: 100%;
+  }
+  .artwork-title {
+    margin-right: 0;
+  }
+}
   @media (max-width: 768px) {
   .character { display: none; }
   nav { padding: 14px 16px; flex-wrap: wrap; gap: 6px; justify-content: center; }
@@ -491,7 +512,7 @@ document.addEventListener('mousemove', e => {
   .about-left { width: 100%; }
   .about h1 { font-size: 1.5rem; }
   .artwork-section { flex-direction: column; padding: 24px 20px 32px; gap: 20px; }
-  .artwork-img { width: 100%;max-width: 100%; height: 260px;object-fit: cover; }
+  .artwork-img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
   .artwork-text { width: 100%; max-width: 100%;word-break: break-word; overflow-wrap: break-word; }
   .artwork-title { font-size: 2rem; margin-right: 0; }
   .artwork-banner { height: 80px; }
