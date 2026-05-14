@@ -15,7 +15,6 @@ Visit the portfolio here!! :
 ## Project Structure
 
 ```bash
-.
 ├── index.html
 ├── style.css
 └── assets/
