@@ -1,6 +1,7 @@
 # Portfolio Website ‧₊˚♪ 𝄞₊˚⊹
 
-A simple personal portfolio website for my friend built using ![HTML](https://img.shields.io/badge/HTML-5-E34F26) ![CSS](https://img.shields.io/badge/CSS-3-1572B6)
+A simple personal portfolio website for my friend built using
+![HTML](https://img.shields.io/badge/HTML-5-E34F26) ![CSS](https://img.shields.io/badge/CSS-3-1572B6)
 
 ## Live Website
 
